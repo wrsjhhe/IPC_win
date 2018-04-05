@@ -19,6 +19,7 @@ class Client
 public:
 	Client();
 	Client(const Client&) = delete;
+	~Client() {}
 
 	void init(const std::string& mapName, size_t size, const std::string& eventName);
 

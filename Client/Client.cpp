@@ -20,7 +20,6 @@ void Client::init(const std::string& mapName, size_t size, const std::string& ev
 	m_mapSize = size;
 
 	m_EventName = eventName;
-
 }
 
 

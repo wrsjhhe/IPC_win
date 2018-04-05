@@ -25,6 +25,9 @@ class Server
 
 public:
 	Server();
+	Server(const Server&) = delete;
+	~Server() { CloseHandle(m_hMap); }
+
 	void createShm(const std::string& mapName, size_t size);
 	void appendRcvEvent(const std::string& eventName, const _FUNC& func);
 
