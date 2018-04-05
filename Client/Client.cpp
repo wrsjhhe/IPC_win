@@ -44,7 +44,8 @@ void Client::send(const std::string& eventType, LPVOID pdata, size_t dataSize, c
 	HANDLE hSendEvent = OpenEvent(EVENT_ALL_ACCESS, NULL, sndEventName.c_str());
 	if (hSendEvent == nullptr)
 	{
-		throw;
+		exit(1);
+		//错误处理
 	}
 	SetEvent(hSendEvent);
 
@@ -53,6 +54,7 @@ void Client::send(const std::string& eventType, LPVOID pdata, size_t dataSize, c
 	HANDLE hRcvEvent = CreateEvent(NULL, FALSE, FALSE, rcvEventName.c_str());
 	if (hRcvEvent == nullptr)
 	{
+		exit(1);
 		//错误处理
 	}
 	std::cout << "等待数据返回中..." << std::endl;
